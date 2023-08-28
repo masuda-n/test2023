@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Calculation:scenario xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:Calculation="http://www.sap.com/ndb/BiModelCalculation.ecore" id="V_ORDERS" applyPrivilegeType="NONE" dataCategory="CUBE" schemaVersion="3.0" hierarchyGeneration="SQL" outputViewType="Aggregation" cacheInvalidationPeriod="NONE" enforceSqlExecution="true">
+<descriptions defaultDescription="V_ORDERS"/>
+<localVariables/>
+<variableMappings/>
+<dataSources>
+  <DataSource id="ORDERS">
+    <resourceUri>ORDERS</resourceUri>
+  </DataSource>
+  <DataSource id="PRODUCTS">
+    <resourceUri>PRODUCTS</resourceUri>
+  </DataSource>
+  <DataSource id="CUSTOMERS">
+    <resourceUri>CUSTOMERS</resourceUri>
+  </DataSource>
+</dataSources>
+<snapshotProcedures/>
+<calculationViews>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_1" cardinality="CN_N" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="CUSTOMERS" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="ORDERID" aggregationType="sum"/>
+      <viewAttribute id="PRODUCTID" aggregationType="sum"/>
+      <viewAttribute id="EMPLOYEEID" aggregationType="sum"/>
+      <viewAttribute id="ORDERPERIODID" aggregationType="sum"/>
+      <viewAttribute id="REQUIREDPERIODID" aggregationType="sum"/>
+      <viewAttribute id="SHIPPEDPERIODID" aggregationType="sum"/>
+      <viewAttribute id="SHIPPERID" aggregationType="sum"/>
+      <viewAttribute id="UNITPRICE" aggregationType="sum"/>
+      <viewAttribute id="QUANTITY" aggregationType="sum"/>
+      <viewAttribute id="DISCOUNT" aggregationType="sum"/>
+      <viewAttribute id="UNITSALES" aggregationType="sum"/>
+      <viewAttribute id="NETSALES" aggregationType="sum"/>
+      <viewAttribute id="UNITCOST" aggregationType="sum"/>
+      <viewAttribute id="COST" aggregationType="sum"/>
+      <viewAttribute id="CATEGORYID" aggregationType="sum"/>
+      <viewAttribute id="LINEID" aggregationType="sum"/>
+      <viewAttribute id="PRODUCTNAME"/>
+      <viewAttribute id="PRODUCTDESCRIPTION"/>
+      <viewAttribute id="CATEGORYNAME"/>
+      <viewAttribute id="CATEGORYDESCRIPTION"/>
+      <viewAttribute id="LINENAME"/>
+      <viewAttribute id="LINEDESCRIPTION"/>
+      <viewAttribute id="DISCONTINUED" aggregationType="sum"/>
+      <viewAttribute id="CUSTOMERID" aggregationType="sum"/>
+      <viewAttribute hidden="true" id="JOIN$PRODUCTID$PRODUCTID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="ORDERS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERID" source="ORDERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEEID" source="EMPLOYEEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERPERIODID" source="ORDERPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REQUIREDPERIODID" source="REQUIREDPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIPPEDPERIODID" source="SHIPPEDPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIPPERID" source="SHIPPERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITPRICE" source="UNITPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITY" source="QUANTITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISCOUNT" source="DISCOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITSALES" source="UNITSALES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETSALES" source="NETSALES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITCOST" source="UNITCOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COST" source="COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMERID" source="CUSTOMERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCTID$PRODUCTID" source="PRODUCTID"/>
+    </input>
+    <input node="PRODUCTS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYID" source="CATEGORYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEID" source="LINEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTNAME" source="PRODUCTNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTDESCRIPTION" source="PRODUCTDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYNAME" source="CATEGORYNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYDESCRIPTION" source="CATEGORYDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINENAME" source="LINENAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEDESCRIPTION" source="LINEDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISCONTINUED" source="DISCONTINUED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$PRODUCTID$PRODUCTID" source="PRODUCTID"/>
+    </input>
+    <joinAttribute name="JOIN$PRODUCTID$PRODUCTID"/>
+  </calculationView>
+  <calculationView xsi:type="Calculation:JoinView" id="Join_1_2" cardinality="CN_N" joinType="inner" multiJoinNode="Join_1" multiJoinCentralTable="CUSTOMERS" multiJoinOrder="Outside In">
+    <viewAttributes>
+      <viewAttribute id="ORDERID" aggregationType="sum"/>
+      <viewAttribute id="PRODUCTID" aggregationType="sum"/>
+      <viewAttribute id="EMPLOYEEID" aggregationType="sum"/>
+      <viewAttribute id="ORDERPERIODID" aggregationType="sum"/>
+      <viewAttribute id="REQUIREDPERIODID" aggregationType="sum"/>
+      <viewAttribute id="SHIPPEDPERIODID" aggregationType="sum"/>
+      <viewAttribute id="SHIPPERID" aggregationType="sum"/>
+      <viewAttribute id="UNITPRICE" aggregationType="sum"/>
+      <viewAttribute id="QUANTITY" aggregationType="sum"/>
+      <viewAttribute id="DISCOUNT" aggregationType="sum"/>
+      <viewAttribute id="UNITSALES" aggregationType="sum"/>
+      <viewAttribute id="NETSALES" aggregationType="sum"/>
+      <viewAttribute id="UNITCOST" aggregationType="sum"/>
+      <viewAttribute id="COST" aggregationType="sum"/>
+      <viewAttribute id="CATEGORYID" aggregationType="sum"/>
+      <viewAttribute id="LINEID" aggregationType="sum"/>
+      <viewAttribute id="PRODUCTNAME"/>
+      <viewAttribute id="PRODUCTDESCRIPTION"/>
+      <viewAttribute id="CATEGORYNAME"/>
+      <viewAttribute id="CATEGORYDESCRIPTION"/>
+      <viewAttribute id="LINENAME"/>
+      <viewAttribute id="LINEDESCRIPTION"/>
+      <viewAttribute id="DISCONTINUED" aggregationType="sum"/>
+      <viewAttribute id="CUSTOMERID" aggregationType="sum"/>
+      <viewAttribute id="CITYID" aggregationType="sum"/>
+      <viewAttribute id="COUNTRYID" aggregationType="sum"/>
+      <viewAttribute id="REGIONID" aggregationType="sum"/>
+      <viewAttribute id="CUSTOMER"/>
+      <viewAttribute id="CITYNAME"/>
+      <viewAttribute id="COUNTRYNAME"/>
+      <viewAttribute id="REGIONNAME"/>
+      <viewAttribute hidden="true" id="JOIN$CUSTOMERID$CUSTOMERID"/>
+    </viewAttributes>
+    <calculatedViewAttributes/>
+    <input node="CUSTOMERS">
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMERID" source="CUSTOMERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITYID" source="CITYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRYID" source="COUNTRYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIONID" source="REGIONID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CUSTOMER" source="CUSTOMER"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CITYNAME" source="CITYNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COUNTRYNAME" source="COUNTRYNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REGIONNAME" source="REGIONNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CUSTOMERID$CUSTOMERID" source="CUSTOMERID"/>
+    </input>
+    <input node="Join_1_1">
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERID" source="ORDERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTID" source="PRODUCTID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="EMPLOYEEID" source="EMPLOYEEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="ORDERPERIODID" source="ORDERPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="REQUIREDPERIODID" source="REQUIREDPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIPPEDPERIODID" source="SHIPPEDPERIODID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="SHIPPERID" source="SHIPPERID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITPRICE" source="UNITPRICE"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="QUANTITY" source="QUANTITY"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISCOUNT" source="DISCOUNT"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITSALES" source="UNITSALES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="NETSALES" source="NETSALES"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="UNITCOST" source="UNITCOST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="COST" source="COST"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYID" source="CATEGORYID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEID" source="LINEID"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTNAME" source="PRODUCTNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="PRODUCTDESCRIPTION" source="PRODUCTDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYNAME" source="CATEGORYNAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="CATEGORYDESCRIPTION" source="CATEGORYDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINENAME" source="LINENAME"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="LINEDESCRIPTION" source="LINEDESCRIPTION"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="DISCONTINUED" source="DISCONTINUED"/>
+      <mapping xsi:type="Calculation:AttributeMapping" target="JOIN$CUSTOMERID$CUSTOMERID" source="CUSTOMERID"/>
+    </input>
+    <joinAttribute name="JOIN$CUSTOMERID$CUSTOMERID"/>
+  </calculationView>
+</calculationViews>
+
+<logicalModel id="Join_1_2">
+  <attributes>
+    <attribute id="CUSTOMERID" order="1" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="顧客 ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CUSTOMERID"/>
+    </attribute>
+    <attribute id="CITYID" order="2" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="都市 ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CITYID"/>
+    </attribute>
+    <attribute id="COUNTRYID" order="3" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="国 ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="COUNTRYID"/>
+    </attribute>
+    <attribute id="REGIONID" order="4" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="地域 ID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="REGIONID"/>
+    </attribute>
+    <attribute id="CUSTOMER" order="5" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="顧客"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CUSTOMER"/>
+    </attribute>
+    <attribute id="CITYNAME" order="6" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="都市"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CITYNAME"/>
+    </attribute>
+    <attribute id="COUNTRYNAME" order="7" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="国"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="COUNTRYNAME"/>
+    </attribute>
+    <attribute id="REGIONNAME" order="8" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="地域"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="REGIONNAME"/>
+    </attribute>
+    <attribute id="PRODUCTID" order="10" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="製品番号"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="PRODUCTID"/>
+    </attribute>
+    <attribute id="ORDERPERIODID" hidden="true" order="12" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="ORDERPERIODID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="ORDERPERIODID"/>
+    </attribute>
+    <attribute id="NETSALES" order="20" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="NETSALES"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="NETSALES"/>
+    </attribute>
+    <attribute id="CATEGORYID" order="23" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="CATEGORYID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CATEGORYID"/>
+    </attribute>
+    <attribute id="LINEID" order="24" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="LINEID"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="LINEID"/>
+    </attribute>
+    <attribute id="PRODUCTNAME" order="25" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTNAME"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="PRODUCTNAME"/>
+    </attribute>
+    <attribute id="PRODUCTDESCRIPTION" order="26" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="PRODUCTDESCRIPTION"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="PRODUCTDESCRIPTION"/>
+    </attribute>
+    <attribute id="CATEGORYNAME" order="27" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORYNAME"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CATEGORYNAME"/>
+    </attribute>
+    <attribute id="CATEGORYDESCRIPTION" order="28" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="CATEGORYDESCRIPTION"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="CATEGORYDESCRIPTION"/>
+    </attribute>
+    <attribute id="LINENAME" order="29" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LINENAME"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="LINENAME"/>
+    </attribute>
+    <attribute id="LINEDESCRIPTION" order="30" displayAttribute="false" attributeHierarchyActive="false">
+      <descriptions defaultDescription="LINEDESCRIPTION"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="LINEDESCRIPTION"/>
+    </attribute>
+    <attribute id="DISCONTINUED" order="31" displayAttribute="false" attributeHierarchyActive="false" hidden="true">
+      <descriptions defaultDescription="DISCONTINUED"/>
+      <keyMapping columnObjectName="Join_1_2" columnName="DISCONTINUED"/>
+    </attribute>
+  </attributes>
+  <calculatedAttributes/>
+  <baseMeasures>
+    <measure id="ORDERID" order="9" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="注文番号"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="ORDERID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="EMPLOYEEID" order="11" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="顧客番号"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="EMPLOYEEID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="REQUIREDPERIODID" order="13" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="REQUIREDPERIODID"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="REQUIREDPERIODID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SHIPPEDPERIODID" order="14" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SHIPPEDPERIODID"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="SHIPPEDPERIODID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="SHIPPERID" order="15" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="SHIPPERID"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="SHIPPERID"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="UNITPRICE" order="16" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="UNITPRICE"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="UNITPRICE"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="QUANTITY" order="17" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="QUANTITY"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="QUANTITY"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="DISCOUNT" order="18" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="DISCOUNT"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="DISCOUNT"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="UNITSALES" order="19" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="UNITSALES"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="UNITSALES"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="UNITCOST" order="21" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="UNITCOST"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="UNITCOST"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+    <measure id="COST" order="22" aggregationType="sum" measureType="simple" restrictionExpressionLanguage="SQL">
+      <descriptions defaultDescription="COST"/>
+      <measureMapping columnObjectName="Join_1_2" columnName="COST"/>
+      <exceptionAggregationMetadata/>
+    </measure>
+  </baseMeasures>
+  <calculatedMeasures/>
+  <restrictedMeasures/>
+  <localDimensions/>
+</logicalModel>
+<layout>
+  <shapes>
+    <shape expanded="true" modelObjectName="Output" modelObjectNameSpace="MeasureGroup">
+      <upperLeftCorner x="40" y="85"/>
+    </shape>
+    
+  
+    <shape expanded="true" modelObjectName="Join_1" modelObjectNameSpace="CalculationView">
+      <upperLeftCorner x="100" y="213"/>
+      <rectangleSize height="30" width="160"/>
+    </shape>
+  
+    <shape modelObjectName="CUSTOMERS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="21" y="32"/>
+      <rectangleSize width="171"/>
+    </shape>
+    <shape modelObjectName="ORDERS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="314" y="33"/>
+      <rectangleSize width="197"/>
+    </shape>
+    <shape modelObjectName="PRODUCTS" modelObjectNameSpace="Join_1" modelObjectType="JoinNodeInput" multiJoinViewNodeName="Join_1">
+      <upperLeftCorner x="620" y="30"/>
+      <rectangleSize width="221"/>
+    </shape>
+  </shapes>
+</layout>
+</Calculation:scenario>
